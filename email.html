@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Email validation</title>
+        <script>
+            function validate(){
+                var mail = document.getElementById("email").value;
+
+                var Regex = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+
+                if(Regex.test(mail)){
+                    document.getElementById("mmm").innerHTML="correct";
+                    return true
+                }
+                else{
+                    document.getElementById("mmm").innerHTML="not correct";
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="return validate()">
+            <input id="email" placeholder="Email" type="text"><br><br>
+            <span id="mmm"></span> <br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
