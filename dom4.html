@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:#ffffff">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addword(lang)
+    {
+        const li = document.createElement('li');
+        li.innerText=lang;
+        document.querySelector('.language').append(li)
+    }
+    addword('python');
+    addword('java');
+
+    function addOptilanguage(langname)
+    {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').append(li);
+    }
+    addOptilanguage('textscript');
+
+    //Edit:-------------
+    //method1
+
+    const second = document.querySelector("li:nth-child(2)");
+    second.innerText="mojo";
+
+    //method2
+
+    const third = document.querySelector("li:nth-child(3)");
+    second.innerText="mojo";
+
+    const nwweee = document.createElement('li');
+    nwweee.innerText='swift'
+    third.replaceWith(nwweee);
+
+     //method3
+
+    const lang1 = document.querySelector("li:first-child");
+    lang1.outerHTML = '<li>typescrpit</li>';
+
+    //remove
+
+    const rem = document.querySelector("li:last-child");
+    rem.remove();
+</script>
+</html>
