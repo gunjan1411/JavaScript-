@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="delayedMessage();">Show a message after two seconds</button>
+    <button onclick="clearMessage();">Cancel message before it happens</button>
+
+    <div id="output"></div>
+</body>
+<script>
+
+
+    let timeoutID;
+
+    function setOutput(outputContent) {
+        document.querySelector("#output").textContent = outputContent;
+        console.log("STARTED")
+    }
+
+    function delayedMessage() {
+        setOutput("");
+        timeoutID = setTimeout(setOutput, 2 * 1000, "That was really slow!");
+        console.log("STOP")
+    }
+
+    function clearMessage() {
+        clearTimeout(timeoutID);
+    }
+
+
+</script>
+
+</html>
